@@ -1,4 +1,3 @@
-import { request } from 'http';
 const mongoose = require('mongoose');
 const Store = mongoose.model('Store');
 
@@ -18,6 +17,8 @@ exports.createStore = async (req, res) => {
     res.redirect(`/store/${store.slug}`);
 };
 
-exports.getStores = (req, res) => {
+exports.getStores = async (req, res) => {
+
     res.render('stores', { title: 'Stores' });
 };
+
